@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>いっきゅうさん</title>
+		<meta charset="utf-8">
+		<link href="/common/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/common/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="/common/css/main.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		{% include "header.html" %}
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div id="loading"><img src="/common/img/ajax-loader.gif"></div>
+			<div id="main" class="content">
+				<ul class="breadcrumb">
+					<li><a href="/" class="js-pjax">Home</a><span class="divider">/</span></li>
+					<li>{{ article.title }}</li>
+				</ul>
+				<div class="row-fluid section">
+					<div class="page-header">
+						<h1>{{ article.title }}
+						<small>{{ article.date }}</small></h2>
+					</div>
+					<div id="show-content" class="row-fluid">
+						{{ article.content| safe}}
+					</div>
+					<div class="row-fluid more">
+						<a href="/" class="js-pjax btn btn-small btn-info"><i class="icon-arrow-left icon-white"></i> 一覧に戻る</a>
+					</div>
+				{% include "footer.html" %}	
+				</div>
+
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /container -->
+		{% include "scripts.html" %}
+	</body>
+</html>

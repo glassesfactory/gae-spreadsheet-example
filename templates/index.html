@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>はにわ</title>
+		<meta charset="utf-8">
+		<link href="common/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="common/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="common/css/main.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		{% include "header.html" %}
+		
+		<!-- container -->
+		<div class="container">
+			<!-- content -->
+			<div id="loading"><img src="common/img/ajax-loader.gif"></div>
+			<div id="main" class="content">
+				<ul class="breadcrumb">
+					<li>Home</li>
+				</ul>
+				{% for article in articles %}
+				<div class="row-fluid section">
+					<div class="page-header">
+						<h2><a href="/article/{{article.id}}" class="js-pjax">{{ article.title }}</a>
+						<small>{{ article.date }}</small></h2>
+					</div>
+					<div class="row-fluid">
+						{{ article.content| safe | mb_truncate(length=150)}}
+					</div>
+					<div class="row-fluid more">
+						<a href="/article/{{article.id}}" class="js-pjax btn btn-small btn-info"><i class="icon-arrow-right icon-white"></i> 続きを読む</a>
+					</div>
+				</div>
+				{% endfor %}
+				{% include "footer.html" %}
+			</div>
+			<!-- /content -->
+		</div>
+		<!-- /container -->
+		{% include "scripts.html" %}
+	</body>
+</html>

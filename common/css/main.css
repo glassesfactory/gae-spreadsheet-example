@@ -1,0 +1,41 @@
+div#loading{
+	display:none;
+	position: absolute;
+	top:50%;
+	left:50%;
+	z-index:200;
+}
+
+div.navbar-inner{
+	background:#1f1f1f;
+}
+
+div.container{
+	margin-top:60px;
+}
+div.content{
+	width:940px;
+	margin: 0 auto;
+}
+
+div.section{
+	margin-bottom:60px;
+}
+
+h1, h2{
+	font-size:36px;
+}
+
+.more{
+	margin-top:20px;
+}
+
+body{
+	line-height:1.8em;
+}
+
+.footer{
+	margin-top: 45px;
+	padding: 35px 0 36px;
+	border-top: 1px solid #E5E5E5;
+}
