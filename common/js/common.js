@@ -27,9 +27,7 @@
 
     //pjax(ajax)通信スタート時に呼ばれるイベント
     main.on('pjax:start', function() {
-      main.fadeOut(400, function() {
-        main.empty();
-      });
+      main.fadeOut(400);
       loading.fadeIn(500);
     });
 
@@ -41,7 +39,7 @@
           //(　ﾟ∀ﾟ)o彡°Shuffle！Shuffle！
           shuffle.start();
       }
-      main.empty().fadeIn(500);
+      main.fadeIn(500);
     });
   });
 }).call(this);
